@@ -10,6 +10,15 @@
 <body>
 
     <form class="w-75 mx-auto">
+        <p class="mt-3">ＨＲ</p>
+        <select name="hr">
+            <option hidden>クラスを選択してください</option>
+            <option value="31">31HR</option>
+            <option value="32">32HR</option>
+            <option value="33">33HR</option>
+            <option value="34">34HR</option>
+            <option value="35">35HR</option>
+          </select>  
         <p class="mt-3">HRNO</p>
         <div>
             <input class="form-control w-100 mt-1" name="hrno" placeholder=" (例)3541" required>
@@ -71,13 +80,14 @@
 
         $(function () {
             $('form').submit(function () {
-                const hrno = $('input[name="hrno"]').val();
+                const hr = $('input[name="hr"]').val();
+                //const hrno = $('input[name="hrno"]').val();
                 const name = $('input[name="name"]').val();
                 const koku  = $('input[name="koku"]').val();
                 const suu  = $('input[name="suu"]').val();
                 const eigo = $('input[name="eigo"]').val();
                 
-                const msg = `${hrno}\n${name}\n${koku}\n${suu}\n${eigo}`;
+                const msg = `${hr}\n${name}\n${koku}\n${suu}\n${eigo}`;
                 sendText(msg);
 
                 return false;
