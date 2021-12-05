@@ -1,1 +1,1 @@
-# life-first-app
+# liff-first-app
