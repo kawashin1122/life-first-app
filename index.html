@@ -10,7 +10,7 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p>欠席連絡等を選択してください<br>
+        <p>連絡事項を選択してください<br>
             <input type="radio" name="ans1" value="欠席" checked> 欠席
             <input type="radio" name="ans1" value="遅刻"> 遅刻
             <input type="radio" name="ans1" value="早退"> 早退
@@ -89,14 +89,14 @@
         $(function () {
             $('form').submit(function () {
                 const ans1 = $('input[name="ans1"]:checked').val();
-                //const hr = $('select[name="hr"]').val();
+                const hr = $('select[name="hr"]').val();
                 const no = $('input[name="no"]').val();
                 const name = $('input[name="name"]').val();
                 const koku = $('input[name="koku"]').val();
                 const suu  = $('input[name="suu"]').val();
                 const eigo = $('input[name="eigo"]').val();
                 
-                const msg = `${ans1}\n${no}\n${name}\n${koku}\n${suu}\n${eigo}`;
+                const msg = `${ans1}\n${hr}\n${no}\n${name}\n${koku}\n${suu}\n${eigo}`;
                 sendText(msg);
 
                 return false;
